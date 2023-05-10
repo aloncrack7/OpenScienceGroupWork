@@ -138,15 +138,21 @@ def getAuthors(dir=folderPath):
 
             authors=[]
             for j in authorsList:
-                author=re.findall(r">(.*?)<", str(j.find("forename")))[0] +' '+re.findall(r">(.*?)<", str(j.find("surnname")))[0]
+                forename=str(j.find("forename"))
+                if forename=="None": forename='><'
+                surname=str(j.find("surname"))
+                if surname=="None": surname='><'
+                author=re.findall(r">(.*?)<", forename)[0] +' '+re.findall(r">(.*?)<", surname)[0]
                 
                 authorWithOrgs=[]
-                orgList=j.find_all("orgname")
-                for k in orgList:
-                    authorWithOrg=author+": "+re.findall(r">(.*?)<", k)[0]
-                    authorWithOrgs.append(authorWithOrg)
-                
-                authors.append(authorWithOrgs)
+                affiliation=j.find("affiliation")
+                if affiliation!=None:
+                    orgList=affiliation.find_all("orgName")
+                    for k in orgList:
+                        authorWithOrg=author+": "+re.findall(r">(.*?)<", str(k))[0]
+                        authorWithOrgs.append(authorWithOrg)
+                    
+                    authors.append(authorWithOrgs)
 
             with open(f"{dir}/{i}_authors.txt", 'w') as authorsFile:
                 authorsFile.write(str(authors))

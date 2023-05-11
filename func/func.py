@@ -22,7 +22,7 @@ from bs4 import BeautifulSoup as bs
 client = GrobidClient(config_path="./config.json")
 print('Conection')
 date=datetime.date(datetime.now())
-time=datetime.time(datetime.now())
+time=str(datetime.time(datetime.now())).replace(":", "")
 folderPath=f'out_{date}_{time}'
 
 def prepareFolder(dir=folderPath, inPath="papers"):

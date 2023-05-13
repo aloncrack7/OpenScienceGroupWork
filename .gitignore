@@ -161,7 +161,7 @@ cython_debug/
 
 grobid_client_python/**/*
 out_*/*
-groupProyect/**/*
+groupProject/**/*
 pdfs/**/*
 *.pdf
 out/**/*

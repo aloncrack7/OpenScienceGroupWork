@@ -28,11 +28,11 @@ folderPath=f'out_{date}_{time}'
 def prepareFolder(dir=folderPath, inPath="papers"):
     oldDircetory=os.popen(f"ls | grep \"out_\" | tail -n 1").read().replace("\n", "")
     os.system(f"mkdir {dir}")
-    loadedPapers=[]
+    # loadedPapers=[]
 
-    if oldDircetory!='' and oldDircetory!='out_container':
-        with open(f"{oldDircetory}/loadedPapers.txt") as file:
-            loadedPapers = [line.rstrip() for line in file]
+    # if oldDircetory!='' and oldDircetory!='out_container':
+    #     with open(f"{oldDircetory}/loadedPapers.txt") as file:
+    #         loadedPapers = [line.rstrip() for line in file]
 
     for requestPaper in os.listdir(inPath):
         fileName=re.sub(r"\.[^$]*", "", requestPaper)
@@ -45,7 +45,7 @@ def prepareFolder(dir=folderPath, inPath="papers"):
         filePath=re.sub(r" ", "\\ ", f"{inPath}/{requestPaper}", 0)
         os.system(f"cp {filePath} {dir}")
 
-        os.system(f"echo {fileName} >> {dir}/loadedPapers.txt")
+        # os.system(f"echo {fileName} >> {dir}/loadedPapers.txt")
 
     print('Prepare folder')
 
@@ -66,7 +66,9 @@ def extractAbstract(dir=folderPath):
                 doc=gtx.parse_document_xml(xmlFile.read())
 
                 with open(f"{filePath}_abstract.txt", 'w') as abstractFile:
-                    abstractFile.write(str(doc.abstract))
+                    abstract=str(doc.abstract)
+                    if abstract!=None:
+                        abstractFile.write(str(doc.abstract))
 
     print('Extract abstract')
 

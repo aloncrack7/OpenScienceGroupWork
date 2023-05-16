@@ -1,0 +1,15 @@
+---
+#-----------------------------
+# file_descriptor: "file_name"
+#-----------------------------
+  input_to_vocab_yaml: "resources/input_to_vocab.yaml"
+  template_html: "resources/template.html"
+  template_help: "resources/help.html"
+  template_landing: "resources/landing_page.html"
+  output_html: "ro-crate-preview.html"
+  output_html_help: "help.html"
+  output_html_landing: "landing_page.html"
+  output_jsonld: "ro-crate-metadata.json"
+  htaccess: "resources/.htaccess"
+  default_author_img: default_author.jpg
+  GITHUB_PERSONAL_ACCESS_TOKEN: 

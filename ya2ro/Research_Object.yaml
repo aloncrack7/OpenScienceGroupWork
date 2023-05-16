@@ -1,0 +1,35 @@
+# Mandatory field
+type: "paper"
+
+title: "Advanced data analysis on research publications"
+
+datasets:
+  - http://doi.org/10.5281/zenodo.5120254
+  - http://doi.org/10.5281/zenodo.5120231
+  - http://doi.org/10.5281/zenodo.5120200
+  - https://doi.org/10.5281/zenodo.4686804
+  - http://doi.org/10.5281/zenodo.5120117
+  - https://doi.org/10.5281/zenodo.5120050
+  - http://doi.org/10.5281/zenodo.5121276
+
+software:
+  - https://github.com/aloncrack7/OpenScienceGroupWork/tree/main/clustering
+  - https://github.com/aloncrack7/OpenScienceGroupWork/tree/main/func
+  - https://github.com/aloncrack7/OpenScienceGroupWork/tree/main/sparkProcesing
+
+authors:
+  - name: "Gonzalo Romeral "
+    role: "Computer Engineer"
+  -
+    name: "Santiago Sueiras"
+    position: "Computer Engineer"
+   
+  -
+    name: "Alonso García"
+    position: "Computer Engineer"
+    
+  -
+    name: "Shengxing Lu"
+    position: "Computer Engineer"
+   
+   

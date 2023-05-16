@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  grobid:
+    image: lfoppiano/grobid:0.7.2
+    container_name: grobid
+    restart: unless-stopped
+    ports:
+      - 8070:8070
+    networks:
+      - grobid
+  
+  client:
+    image: client_image_group_project
+    build: .
+    container_name: client
+    depends_on: 
+      - grobid
+    command: python __main__.py
+    volumes:
+      - ./pdfs:/home/root/project/pdfs:rw
+      - ./out_container:/home/root/project/out:rw
+    networks:
+      - grobid
+
+networks:
+  grobid:

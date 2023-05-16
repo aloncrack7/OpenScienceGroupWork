@@ -56,12 +56,13 @@ def extractInfo(dir=folderPath):
     print('extract info')
 
 # Get the abstract of every paper
-def extractAbstract(dir=folderPath):
+def extractAbstract(dir=folderPath, outPath=None):
     teis=os.listdir(dir)
 
     for i in teis:
         if not i.endswith(".txt"):
-            filePath=f'{dir}/{i}'
+            filePath = f'{dir}/{i}'
+            outPath = f'{dir}/{i}' if outPath==None else f"{outPath}/{i}"
             with open(filePath, 'r') as xmlFile:
                 doc=gtx.parse_document_xml(xmlFile.read())
 
@@ -72,41 +73,14 @@ def extractAbstract(dir=folderPath):
 
     print('Extract abstract')
 
-# Generates word cloud 
-def generateWordCloud(text):
-    wordCloud = WordCloud(collocations = False, background_color = 'white').generate(text)
-    plt.imshow(wordCloud, interpolation='bilinear')
-    plt.axis("off")
-    plt.savefig('./out/wordcloud.png')
-    plt.close()
-    print('WordCloud')
 
-def countFigures(dir=folderPath):
-    teis=os.listdir(f"{dir}")
-
-    counts=[0]*(len(teis)-1)
-    pos=0
-    for i in range(0, len(teis)):
-        if not teis[i].endswith(".txt"):
-            counts[pos]=int(os.popen(f"grep -o '<figure xmlns=' {dir}/{teis[i]} | wc -l").read().replace('\n', ''))
-            pos+=1
-
-    print('count figures')
-    return counts
-
-def genHistogram(numFigures, dir=folderPath):
-    plt.hist(numFigures, density=False)
-    plt.ylabel("Number of figures")
-    plt.xticks(numFigures, os.listdir(f"{dir}").remove("loadedPapers.txt"))
-    plt.savefig('./out/histogram.png')
-    print('Histogram')
-
-def getCitations(dir=folderPath):
+def getCitations(dir=folderPath, outPath=None):
     teis=os.listdir(dir)
 
     for i in teis:
         if not i.endswith(".txt"):
             content = []
+
             with open(f"{dir}/{i}", "r", encoding="utf8") as file:
                 content = file.readlines()
                 content = "".join(content)
@@ -119,12 +93,13 @@ def getCitations(dir=folderPath):
             for j in references:
                 links.append(j.get("target"))
 
-            with open(f"{dir}/{i}_reference.txt", 'w') as referenceFile:
+            filePath = f"{dir}/{i}_reference.txt" if outPath==None else f"{outPath}/{i}_reference.txt"
+            with open(filePath, 'w') as referenceFile:
                 referenceFile.write(str(links))
 
     print("Citations")
 
-def getAuthors(dir=folderPath):
+def getAuthors(dir=folderPath, outPath=None):
     teis=os.listdir(dir)
 
     for i in teis:
@@ -156,7 +131,8 @@ def getAuthors(dir=folderPath):
                     
                     authors.append(authorWithOrgs)
 
-            with open(f"{dir}/{i}_authors.txt", 'w') as authorsFile:
+            filePath = f"{dir}/{i}_authors.txt" if outPath==None else f"{outPath}/{i}_authors.txt"
+            with open(filePath, 'w') as authorsFile:
                 authorsFile.write(str(authors))
 
     print("Authors") 

@@ -1,0 +1,10 @@
+Workflow Sketch:
+
+1. Ingest the 30 research papers using Spark's data ingestion capabilities.
+2. Preprocess the text data to clean and extract relevant information.
+3. Apply a topic modeling algorithm to identify common themes within the research papers.
+4. Group the papers based on their topics..
+5. Construct a Research Knowledge Graph (RKG) using Spark's graph processing capabilities.
+6. Extract metadata and funding information from the papers and link them to the corresponding nodes in the RKG.
+7. Visualize the RKG and perform advanced data analysis using graph visualization tools and HuggingFace's models.
+8. Generate insights and draw conclusions from the analysis.

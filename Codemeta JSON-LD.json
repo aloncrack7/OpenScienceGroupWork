@@ -1,0 +1,66 @@
+{
+    "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+    "@type": "SoftwareSourceCode",
+    "license": "https://spdx.org/licenses/CC0-1.0",
+    "codeRepository": "https://github.com/aloncrack7/AI-Open-Science-Research-Software-Engineering",
+    "contIntegration": "https://www.travis-ci.org/aloncrack7/AI-Open-Science-Research-Software-Engineering",
+    "dateCreated": "2023-04-17",
+    "datePublished": "2023-04-15",
+    "dateModified": "2023-04-17",
+    "downloadUrl": "https://github.com/aloncrack7/AI-Open-Science-Research-Software-Engineering/func/func.py",
+    "issueTracker": "https://github.com/aloncrack7/AI-Open-Science-Research-Software-Engineering/issues",
+    "name": "Researching Data",
+    "version": "1.1",
+    "identifier": "10.5281",
+    "description": "Advanced data analysis on research publications: Given a corpus of 30 papers, group them according common themes, link them in a Research Knowledge Graph (RKG) together with their metadata and funding information. Use HuggingFace as an open platform for models.",
+    "applicationCategory": "Engineering",
+    "releaseNotes": "Fix metadata information",
+    "referencePublication": "https://zenodo.org/record/7687668#.Y_8eLnbMJPY",
+    "funder": {
+        "@type": "Organization",
+        "name": "Gonzalo Romeral Álvarez"
+    },
+    "keywords": [
+        "grobid",
+        "papers",
+        "pdf",
+        "conversion"
+    ],
+    "programmingLanguage": [
+        "Python 3"
+    ],
+    "operatingSystem": [
+        "Windows"
+    ],
+    "softwareRequirements": [
+        "Python 3.7 +",
+        "Windows 8 +",
+        ""
+    ],
+    "author": [
+        {
+            "@type": "Person",
+            "givenName": "Romeral",
+            "familyName": "Gonzalo ",
+            "email": "gonzalo.romeral.alvarez@alumnos.upm.es"
+        }, 
+      {
+            "@type": "Person",
+            "givenName": "Lu",
+            "familyName": "Shengxing  ",
+            "email": "shengxing.lu@alumnos.upm.es"
+        },
+      {
+            "@type": "Person",
+            "givenName": "Sueiras",
+            "familyName": "Santiago  ",
+            "email": "santiago.sueiras@alumnos.upm.es"
+        },
+      {
+            "@type": "Person",
+            "givenName": "García Velasco",
+            "familyName": "Alonso ",
+            "email": "alonso.garcia.velasco@alumnos.upm.es"
+        },
+    ]
+}

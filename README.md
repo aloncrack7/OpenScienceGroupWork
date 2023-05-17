@@ -1,4 +1,7 @@
 # OpenScienceGroupWork
+
+[![DOI](https://zenodo.org/badge/632578476.svg)](https://zenodo.org/badge/latestdoi/632578476)
+
 Repo for Open Science subject: Group Work
 Objective: Advanced data analysis on research publications: Given a corpus of 30
 papers, group them according common themes, link them in a Research Knowledge

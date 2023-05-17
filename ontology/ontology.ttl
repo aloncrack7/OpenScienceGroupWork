@@ -1,0 +1,128 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ns: <http://www.analysis.com/entities#> .
+@prefix ns2: <http://www.analysis.com/attributes#> .
+@prefix oa: <docs.openalex.org/api-entities/works/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns2:acknowledges_organization a owl:ObjectProperty ;
+    rdfs:label "acknowledges_organization" ;
+    rdfs:domain ns:paper ;
+    rdfs:range ns:organization .
+
+ns2:aknowledges_person a owl:ObjectProperty ;
+    rdfs:label "aknowledges_person" ;
+    rdfs:domain ns:paper ;
+    rdfs:range ns:person .
+
+ns2:belongs_to a owl:ObjectProperty ;
+    rdfs:label "belongs_to" ;
+    rdfs:domain ns:project .
+
+ns2:belongs_to_topic a owl:ObjectProperty ;
+    rdfs:label "belongs_to_topic" ;
+    rdfs:domain ns:paper ;
+    rdfs:range ns:topic .
+
+ns2:name a owl:DatatypeProperty ;
+    rdfs:label "name" ;
+    rdfs:domain ns:person .
+
+ns2:related_to a owl:ObjectProperty ;
+    rdfs:label "related_to" ;
+    rdfs:domain ns:topic ;
+    rdfs:range ns:topic .
+
+ns2:similar_to a owl:ObjectProperty ;
+    rdfs:label "similar_to" ;
+    rdfs:domain ns:paper ;
+    rdfs:range ns:paper .
+
+ns2:sourceFrom a owl:ObjectProperty ;
+    rdfs:label "source from" ;
+    rdfs:range ns:project .
+
+ns2:title a owl:DatatypeProperty ;
+    rdfs:label "title" ;
+    rdfs:domain ns:paper .
+
+ns2:topic_name a owl:DatatypeProperty ;
+    rdfs:label "topic_name" ;
+    rdfs:domain ns:topic .
+
+ns2:works_in a owl:ObjectProperty ;
+    rdfs:label "works_in" ;
+    rdfs:domain ns:person ;
+    rdfs:range ns:organization .
+
+ns2:works_on a owl:ObjectProperty ;
+    rdfs:label "works_on" ;
+    rdfs:domain ns:person ;
+    rdfs:range ns:project .
+
+oa:W2741809807 a owl:DatatypeProperty ;
+    rdfs:label "w2741809807" ;
+    rdfs:domain ns:paper .
+
+wd:Q1128340 a owl:DatatypeProperty ;
+    rdfs:label "q1128340" ;
+    rdfs:domain ns:paper .
+
+wd:Q1200750 a owl:DatatypeProperty ;
+    rdfs:label "q1200750" ;
+    rdfs:domain ns:topic .
+
+wd:Q1361758 a owl:DatatypeProperty ;
+    rdfs:label "q1361758" ;
+    rdfs:domain ns:paper .
+
+wd:Q185836 a owl:DatatypeProperty ;
+    rdfs:label "q185836" ;
+    rdfs:domain ns:person .
+
+wd:Q372353 a owl:DatatypeProperty ;
+    rdfs:label "q372353" ;
+    rdfs:domain ns:project .
+
+wdt:P1104 a owl:DatatypeProperty ;
+    rdfs:label "p1104" ;
+    rdfs:domain ns:paper .
+
+wdt:P17 a owl:DatatypeProperty ;
+    rdfs:label "p17" ;
+    rdfs:domain ns:person .
+
+wdt:P452 a owl:DatatypeProperty ;
+    rdfs:label "p452" ;
+    rdfs:domain ns:organization .
+
+wdt:P856 a owl:DatatypeProperty ;
+    rdfs:label "p856" ;
+    rdfs:domain ns:organization .
+
+owl: a owl:Ontology ;
+    dc:description "Ontology code created by Chowlk" .
+
+owl:ns2 a owl:DatatypeProperty ;
+    rdfs:label "ns2>" ;
+    rdfs:domain ns:project ;
+    rdfs:range xsd:project_name .
+
+ns:organization a owl:Class ;
+    rdfs:label "organization" .
+
+ns:project a owl:Class ;
+    rdfs:label "project" .
+
+ns:topic a owl:Class ;
+    rdfs:label "topic" .
+
+ns:person a owl:Class ;
+    rdfs:label "person" .
+
+ns:paper a owl:Class ;
+    rdfs:label "paper" .
+

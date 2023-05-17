@@ -1,0 +1,40 @@
+activity(Activity1, startTime, endTime)
+agent(Spark, activity=Activity1)
+
+entity(Corpus, label="Research Papers")
+wasGeneratedBy(Corpus, Activity1, time)
+
+entity(PreprocessedData, label="Preprocessed Data")
+wasGeneratedBy(PreprocessedData, Activity2, time)
+used(Activity2, Corpus)
+
+entity(Topics, label="Identified Topics")
+wasGeneratedBy(Topics, Activity3, time)
+used(Activity3, PreprocessedData)
+
+entity(Groups, label="Paper Groups")
+wasGeneratedBy(Groups, Activity4, time)
+used(Activity4, Topics)
+
+entity(RKG, label="Research Knowledge Graph")
+wasGeneratedBy(RKG, Activity5, time)
+used(Activity5, Groups)
+
+entity(Metadata, label="Papers Metadata")
+entity(FundingInfo, label="Funding Information")
+wasGeneratedBy(Metadata, Activity6, time)
+wasGeneratedBy(FundingInfo, Activity6, time)
+used(Activity6, Corpus)
+
+wasAssociatedWith(Spark, Activity1)
+wasAssociatedWith(Spark, Activity2)
+wasAssociatedWith(Spark, Activity3)
+wasAssociatedWith(Spark, Activity4)
+wasAssociatedWith(Spark, Activity5)
+wasAssociatedWith(Spark, Activity6)
+
+wasDerivedFrom(Topics, PreprocessedData)
+wasDerivedFrom(Groups, Topics)
+wasDerivedFrom(RKG, Groups)
+wasDerivedFrom(Metadata, Corpus)
+wasDerivedFrom(FundingInfo, Corpus)

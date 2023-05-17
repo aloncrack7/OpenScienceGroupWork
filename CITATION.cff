@@ -1,0 +1,31 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  Artificial Intelligence And Open Science In Research
+  Software Engineering
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Alonso
+    family-names: García Velasco
+    email: alonso.garcia.velasco@alumnos.upm.es
+    affiliation: Polytechnic University of Madrid's Student
+    - given-names: Gonzalo  
+    family-names: Romeral Álvarez
+    email: gonzalo.romeral.alvarez@alumnos.upm.es
+    affiliation: Polytechnic University of Madrid's Student
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.7709707
+repository-code: >-
+  https://github.com/aloncrack7/OpenScienceGroupWork
+url: >-
+  https://ai-open-science-research-software-engineering.readthedocs.io/en/latest/?badge=latest
+license: CC0-1.0
+commit: a98a4a4b284699a0be30fce0cd36a33e58749c8b
+version: 1.0.0
+date-released: '2023-05-10'
